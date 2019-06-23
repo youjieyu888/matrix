@@ -55,6 +55,7 @@ public class EventAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
+            // only fill with default at the first loading
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(
                     Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.event_item,
@@ -66,9 +67,9 @@ public class EventAdapter extends BaseAdapter {
             eventImage.setImageDrawable(context.getDrawable(R.drawable.event_thumbnail));
         } else {
             eventImage.setImageDrawable(context.getDrawable(R.drawable.banana));
+            // event_thunbnail's src is changed to banana
         }
-
-
+        System.out.println(position);
 
         TextView eventTitle = (TextView) convertView.findViewById(
                 R.id.event_title);
