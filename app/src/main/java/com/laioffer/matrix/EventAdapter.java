@@ -63,13 +63,14 @@ public class EventAdapter extends BaseAdapter {
         }
 
         ImageView eventImage = (ImageView) convertView.findViewById(R.id.event_thumbnail);
+
         if (position % 2 == 1) {
             eventImage.setImageDrawable(context.getDrawable(R.drawable.event_thumbnail));
         } else {
             eventImage.setImageDrawable(context.getDrawable(R.drawable.banana));
-            // event_thunbnail's src is changed to banana
+            // if not defined, reused the recycled one
         }
-        System.out.println(position);
+
 
         TextView eventTitle = (TextView) convertView.findViewById(
                 R.id.event_title);

@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".RegisterFragment">
 
-    <!-- merge xml -->
     <include
-        android:id="@+id/loginLayout"
+        android:id="@+id/register_layout"
         layout="@layout/onboarding_layout" />
 </FrameLayout>

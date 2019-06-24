@@ -13,34 +13,35 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoginFragment extends OnBoardingBaseFragment {
+public class RegisterFragment extends OnBoardingBaseFragment  {
 
 
-    @Override
-    protected int getLayout() {
-        return R.layout.fragment_login;
-    }
+    public static RegisterFragment newInstance() {
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
-
-    public static LoginFragment newInstance() {
-        
         Bundle args = new Bundle();
-        
-        LoginFragment fragment = new LoginFragment();
+
+        RegisterFragment fragment = new RegisterFragment();
         fragment.setArguments(args);
         return fragment;
     }
-    
+
+    public RegisterFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-        submitButton.setText(getString(R.string.login));
+        submitButton.setText(getString(R.string.register));
         return view;
-
     }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.fragment_register;
+    }
+
 
 }

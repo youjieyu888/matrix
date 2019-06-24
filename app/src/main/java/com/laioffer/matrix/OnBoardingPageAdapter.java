@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class OnBoardingPageAdapter extends FragmentPagerAdapter {
-    private static int NUM_ITEMS = 1;
+    private static int NUM_ITEMS = 2;
 
     public OnBoardingPageAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
@@ -23,6 +23,8 @@ public class OnBoardingPageAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return LoginFragment.newInstance();
+            case 1:
+                return RegisterFragment.newInstance();
             default:
                 return null;
         }
@@ -33,6 +35,8 @@ public class OnBoardingPageAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return "Login";
+            case 1:
+                return "Register";
         }
         return null;
     }
