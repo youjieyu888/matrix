@@ -27,6 +27,9 @@ public class OnBoardingActivity extends AppCompatActivity {
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.colorAccent));
     }
-
+    // switch viewpage to #page
+    public void setCurrentPage(int page) {
+        viewpage.setCurrentItem(page);
+    }
 
 }
