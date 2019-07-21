@@ -39,7 +39,7 @@ public class ReportDialog extends Dialog {
     private ImageView mEventTypeImg;
     private TextView mTypeTextView;
     private DialogCallBack mDialogCallBack;
-
+    private String mPrefillText;
     interface DialogCallBack {
         void onSubmit(String editString, String event_type);
         void startCamera();
@@ -135,14 +135,28 @@ public class ReportDialog extends Dialog {
     }
 
 
-    public static ReportDialog newInstance(Context context, int cx, int cy, DialogCallBack dialogCallBack) {
-
+    public static ReportDialog newInstance(Context context, int cx, int cy, DialogCallBack dialogCallBack,
+                                           String event_type, String prefillText) {
         ReportDialog dialog = new ReportDialog(context, R.style.MyAlertDialogStyle);
         dialog.cx = cx;
         dialog.cy = cy;
         dialog.mDialogCallBack = dialogCallBack;
+        dialog.mEventype = event_type;
+        dialog.mPrefillText = prefillText;
         return dialog;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mEventype != null) {
+            showNextViewSwitcher(mEventype);
+        }
+        if (mPrefillText != null) {
+            mCommentEditText.setText(mPrefillText);
+        }
+    }
+
 
     private void setupRecyclerView(View dialogView) {
         mRecyclerView = dialogView.findViewById(R.id.recycler_view);
